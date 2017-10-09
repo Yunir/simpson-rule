@@ -22,7 +22,9 @@ public class SimpsonRule {
         this.limitTo = limitTo;
         this.precision = precision;
         establishCorrectNandH();
+        xi = new ArrayList<Double>();
         generateXi();
+        yi = new ArrayList<Double>();
         generateYi();
         result = getResultOfIntegration(1);
         result_2 = getResultOfIntegration(2);
@@ -68,7 +70,8 @@ public class SimpsonRule {
         double currentXi = limitFrom;
         xi.add(limitFrom);
         for (int i = 0; i < n-1; i++) {
-            xi.add(currentXi+h);
+            currentXi += h;
+            xi.add(currentXi);
         }
         xi.add(limitTo);
     }
@@ -106,7 +109,6 @@ public class SimpsonRule {
     }
 
     private double formula_1(double x) {
-        //TODO delete stub and put formula
-        return x;
+        return (Math.cos(x)/(Math.pow(x, 2) + 1));
     }
 }

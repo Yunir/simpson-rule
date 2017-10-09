@@ -51,7 +51,7 @@
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </VBox.margin>
                   </Label>
-                  <RadioButton mnemonicParsing="false" text="x+y">
+                  <RadioButton fx:id="i_f1" mnemonicParsing="false" selected="true" text="x+y">
                      <VBox.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </VBox.margin>
@@ -59,17 +59,17 @@
                         <ToggleGroup fx:id="i_integrals" />
                      </toggleGroup>
                   </RadioButton>
-                  <RadioButton mnemonicParsing="false" text="x*2-20*y" toggleGroup="$i_integrals">
+                  <RadioButton fx:id="i_f2" mnemonicParsing="false" text="x*2-20*y" toggleGroup="$i_integrals">
                      <VBox.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </VBox.margin>
                   </RadioButton>
-                  <RadioButton mnemonicParsing="false" text="RadioButton" toggleGroup="$i_integrals">
+                  <RadioButton fx:id="i_f3" mnemonicParsing="false" text="RadioButton" toggleGroup="$i_integrals">
                      <VBox.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </VBox.margin>
                   </RadioButton>
-                  <RadioButton mnemonicParsing="false" text="RadioButton" toggleGroup="$i_integrals">
+                  <RadioButton fx:id="i_f4" mnemonicParsing="false" text="RadioButton" toggleGroup="$i_integrals">
                      <VBox.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </VBox.margin>
@@ -141,7 +141,7 @@
             </VBox>
          </children>
       </HBox>
-      <Button fx:id="i_confirmButton" mnemonicParsing="false" prefWidth="600.0" text="Get the result">
+      <Button fx:id="i_confirmButton" mnemonicParsing="false" onAction="#computeIntegral" prefWidth="600.0" text="Get the result">
          <VBox.margin>
             <Insets bottom="5.0" left="10.0" right="10.0" top="25.0" />
          </VBox.margin>
