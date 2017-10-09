@@ -45,7 +45,14 @@ public class Controller {
             else num_of_formula = 4;
             //TODO change From&To if From >= To
             simpsonRule = new SimpsonRule(num_of_formula, Double.parseDouble(i_limitFrom.getText()), Double.parseDouble(i_limitTo.getText()), Double.parseDouble(i_comboBox.getValue().toString()));
-            i_resultsInfo.setText("Am I alive?!");
+            if(simpsonRule.getIsCorrect()) {
+                i_resultsInfo.setText("We have answer! :)\n" +
+                        "Answer: " + simpsonRule.getResult() + "\n" +
+                        "Slices: " + simpsonRule.getN() + "\n" +
+                        "Offset: " + simpsonRule.getRungeRuleOffset());
+            } else {
+                i_resultsInfo.setText("We don't have answer! :(");
+            }
         } else {
             i_resultsInfo.setText("You mistake, don't u?");
         }

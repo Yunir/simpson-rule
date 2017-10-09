@@ -15,6 +15,8 @@ public class SimpsonRule {
     private ArrayList<Double> yi;
     private double result;
     private double result_2;
+    private boolean isCorrect = false;
+    private double rungeRuleOffset;
 
     public SimpsonRule(int num_of_formula, double limitFrom, double limitTo, double precision) {
         this.num_of_formula = num_of_formula;
@@ -28,15 +30,13 @@ public class SimpsonRule {
         generateYi();
         result = getResultOfIntegration(1);
         result_2 = getResultOfIntegration(2);
-        if(RungeRule(result, result_2))
-            System.out.println("You counted everything correctly! Answer is " + result);
-        else
-            System.out.println("Something went wrong..");
+        isCorrect = RungeRule(result, result_2);
     }
 
 
     public boolean RungeRule (double Ih, double I2h) {
-        return (Math.abs(Ih-I2h)/15 <= precision);
+        rungeRuleOffset = Math.abs(Ih-I2h)/15;
+        return (rungeRuleOffset <= precision);
     }
     /**
      * @param step_multiplier - 1 or 2 - to check with RungeRule
@@ -106,6 +106,18 @@ public class SimpsonRule {
     }
     public double getPrecision() {
         return precision;
+    }
+    public boolean getIsCorrect() {
+        return isCorrect;
+    }
+    public double getResult() {
+        return result;
+    }
+    public int getN() {
+        return n;
+    }
+    public double getRungeRuleOffset() {
+        return rungeRuleOffset;
     }
 
     private double formula_1(double x) {
