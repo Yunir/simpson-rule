@@ -7,6 +7,7 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.HBox?>
@@ -20,7 +21,7 @@
             <Font size="14.0" />
          </font>
          <VBox.margin>
-            <Insets top="20.0" />
+            <Insets top="10.0" />
          </VBox.margin>
       </Label>
       <Label alignment="CENTER" prefWidth="600.0" text="Salimzyanov Yunir Ulfatovich [P3211]">
@@ -33,10 +34,15 @@
             <Font size="14.0" />
          </font>
          <VBox.margin>
-            <Insets bottom="20.0" />
+            <Insets />
          </VBox.margin>
       </Label>
-      <HBox prefHeight="200.0" prefWidth="600.0">
+      <Separator prefWidth="200.0">
+         <VBox.margin>
+            <Insets bottom="10.0" top="10.0" />
+         </VBox.margin>
+      </Separator>
+      <HBox prefWidth="600.0">
          <children>
             <VBox prefWidth="500.0">
                <children>
@@ -50,20 +56,20 @@
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </VBox.margin>
                      <toggleGroup>
-                        <ToggleGroup fx:id="integrals" />
+                        <ToggleGroup fx:id="i_integrals" />
                      </toggleGroup>
                   </RadioButton>
-                  <RadioButton mnemonicParsing="false" text="x*2-20*y" toggleGroup="$integrals">
+                  <RadioButton mnemonicParsing="false" text="x*2-20*y" toggleGroup="$i_integrals">
                      <VBox.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </VBox.margin>
                   </RadioButton>
-                  <RadioButton mnemonicParsing="false" text="RadioButton" toggleGroup="$integrals">
+                  <RadioButton mnemonicParsing="false" text="RadioButton" toggleGroup="$i_integrals">
                      <VBox.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </VBox.margin>
                   </RadioButton>
-                  <RadioButton mnemonicParsing="false" text="RadioButton" toggleGroup="$integrals">
+                  <RadioButton mnemonicParsing="false" text="RadioButton" toggleGroup="$i_integrals">
                      <VBox.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </VBox.margin>
@@ -82,7 +88,7 @@
                   </Label>
                   <HBox prefWidth="200.0">
                      <children>
-                        <TextField prefWidth="300.0" promptText="From..">
+                        <TextField fx:id="i_limitFrom" prefWidth="300.0" promptText="From..">
                            <HBox.margin>
                               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                            </HBox.margin>
@@ -95,7 +101,7 @@
                               <Insets top="3.0" />
                            </padding>
                         </Label>
-                        <TextField prefWidth="300.0" promptText="To..">
+                        <TextField fx:id="i_limitTo" prefWidth="300.0" promptText="To..">
                            <HBox.margin>
                               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                            </HBox.margin>
@@ -110,13 +116,13 @@
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </VBox.margin>
                   </Label>
-                  <ComboBox prefWidth="150.0" promptText="Not selected..">
+                  <ComboBox fx:id="i_comboBox" prefWidth="150.0" promptText="Not selected..">
                      <items>
                         <FXCollections fx:factory="observableArrayList">
-                           <String fx:id="precisios_1" fx:value="0.1" />
-                           <String fx:id="precisios_2" fx:value="0.01" />
-                           <String fx:id="precisios_3" fx:value="0.001" />
-                           <String fx:id="precisios_4" fx:value="0.0001" />
+                           <String fx:value="0.1" />
+                           <String fx:value="0.01" />
+                           <String fx:value="0.001" />
+                           <String fx:value="0.0001" />
                         </FXCollections>
                      </items>
                      <VBox.margin>
@@ -130,10 +136,20 @@
             </VBox>
          </children>
       </HBox>
-      <Button disable="true" mnemonicParsing="false" prefWidth="600.0" text="Get the result">
+      <Button fx:id="i_confirmButton" mnemonicParsing="false" prefWidth="600.0" text="Get the result">
          <VBox.margin>
-            <Insets left="200.0" right="200.0" />
+            <Insets bottom="5.0" left="200.0" right="200.0" top="25.0" />
          </VBox.margin>
       </Button>
+      <Separator prefWidth="200.0">
+         <VBox.margin>
+            <Insets bottom="10.0" top="10.0" />
+         </VBox.margin>
+      </Separator>
+      <Label fx:id="i_resultsInfo" alignment="CENTER" prefWidth="600.0" text="Here will be results...">
+         <VBox.margin>
+            <Insets left="10.0" right="10.0" />
+         </VBox.margin>
+      </Label>
    </children>
 </VBox>
