@@ -51,7 +51,7 @@
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </VBox.margin>
                   </Label>
-                  <RadioButton fx:id="i_f1" mnemonicParsing="false" selected="true" text="x+y">
+                  <RadioButton fx:id="i_f1" mnemonicParsing="false" selected="true" text="cos(x)/(x^2+1)">
                      <VBox.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </VBox.margin>
@@ -59,17 +59,17 @@
                         <ToggleGroup fx:id="i_integrals" />
                      </toggleGroup>
                   </RadioButton>
-                  <RadioButton fx:id="i_f2" mnemonicParsing="false" text="x*2-20*y" toggleGroup="$i_integrals">
+                  <RadioButton fx:id="i_f2" mnemonicParsing="false" text="sqrt(1+2x^2-x^3)" toggleGroup="$i_integrals">
                      <VBox.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </VBox.margin>
                   </RadioButton>
-                  <RadioButton fx:id="i_f3" mnemonicParsing="false" text="RadioButton" toggleGroup="$i_integrals">
+                  <RadioButton fx:id="i_f3" mnemonicParsing="false" text="1/sqrt(3+x^5)" toggleGroup="$i_integrals">
                      <VBox.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </VBox.margin>
                   </RadioButton>
-                  <RadioButton fx:id="i_f4" mnemonicParsing="false" text="RadioButton" toggleGroup="$i_integrals">
+                  <RadioButton fx:id="i_f4" mnemonicParsing="false" text="sqrt(x^2+3)" toggleGroup="$i_integrals">
                      <VBox.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </VBox.margin>

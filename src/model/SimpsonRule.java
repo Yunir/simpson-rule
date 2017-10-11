@@ -58,10 +58,18 @@ public class SimpsonRule {
     }
     private void generateYi() {
         for (int i = 0; i < n+1; i++) {
-            //TODO list all of formulas
             switch (num_of_formula) {
                 case 1:
                     yi.add(formula_1(xi.get(i)));
+                    break;
+                case 2:
+                    yi.add(formula_2(xi.get(i)));
+                    break;
+                case 3:
+                    yi.add(formula_3(xi.get(i)));
+                    break;
+                case 4:
+                    yi.add(formula_4(xi.get(i)));
                     break;
             }
         }
@@ -122,5 +130,14 @@ public class SimpsonRule {
 
     private double formula_1(double x) {
         return (Math.cos(x)/(Math.pow(x, 2) + 1));
+    }
+    private double formula_2(double x) {
+        return (Math.sqrt(1+2*Math.pow(x,2)-Math.pow(x,3)));
+    }
+    private double formula_3(double x) {
+        return (1/Math.sqrt(3+Math.pow(x, 5)));
+    }
+    private double formula_4(double x) {
+        return (Math.sqrt(Math.pow(x, 2)+3));
     }
 }
