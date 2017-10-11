@@ -43,15 +43,25 @@ public class Controller {
             else if(i_f2.isSelected()) num_of_formula = 2;
             else if(i_f3.isSelected()) num_of_formula = 3;
             else num_of_formula = 4;
-            //TODO change From&To if From >= To
-            simpsonRule = new SimpsonRule(num_of_formula, Double.parseDouble(i_limitFrom.getText()), Double.parseDouble(i_limitTo.getText()), Double.parseDouble(i_comboBox.getValue().toString()));
+            Double from;
+            Double to;
+            int minus = 1;
+            if(Double.parseDouble(i_limitFrom.getText()) < Double.parseDouble(i_limitTo.getText())) {
+                from = Double.parseDouble(i_limitFrom.getText());
+                to = Double.parseDouble(i_limitTo.getText());
+            } else {
+                to = Double.parseDouble(i_limitFrom.getText());
+                from = Double.parseDouble(i_limitTo.getText());
+                minus = -1;
+            }
+            simpsonRule = new SimpsonRule(num_of_formula, from, to, Double.parseDouble(i_comboBox.getValue().toString()));
             if(simpsonRule.getIsCorrect()) {
                 i_resultsInfo.setText("We have answer! :)\n" +
-                        "Answer: " + simpsonRule.getResult() + "\n" +
+                        "Answer: " + (simpsonRule.getResult()*minus) + "\n" +
                         "Slices: " + simpsonRule.getN() + "\n" +
                         "Offset: " + simpsonRule.getRungeRuleOffset());
             } else {
-                i_resultsInfo.setText("We don't have answer! :(");
+                i_resultsInfo.setText("We don't have answer!");
             }
         } else {
             i_resultsInfo.setText("You mistake, don't u?");
