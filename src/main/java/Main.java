@@ -1,5 +1,3 @@
-package model;
-
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -10,7 +8,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("../view/interface.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("interface.fxml"));
         primaryStage.setTitle("Computational Mathematics - Second Laboratory Work");
         primaryStage.setScene(new Scene(root));
         primaryStage.setResizable(false);
